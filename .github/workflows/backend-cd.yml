@@ -40,6 +40,9 @@ jobs:
       - name: Install dependencies
         run: |
           pipenv install
+      - name: Run lint
+        run: |
+          pipenv run lint
   test: 
     name: TEST JOB
     runs-on: ubuntu-latest
@@ -65,9 +68,7 @@ jobs:
       - name: Install dependencies
         run: |
           pipenv install
-      - name: Run lint
-        run: |
-          pipenv run lint
+      
       - name: Run Backend Tests
         run: | 
           pipenv run test
